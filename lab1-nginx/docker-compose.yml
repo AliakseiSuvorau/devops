@@ -1,0 +1,10 @@
+services:
+  nginx:
+    build: .       # Using Dockerfile from the same dir
+    ports:
+      - "8080:80"  # Binding container port 80 to local machine port 8080
+    volumes:
+      - ./pages:/pages
+
+volumes:
+  pages:
