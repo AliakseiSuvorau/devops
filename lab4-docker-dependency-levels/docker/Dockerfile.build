@@ -1,0 +1,7 @@
+FROM alpine-go-1.23.2:latest
+
+COPY ./src/ /http
+
+WORKDIR /http
+
+RUN go build

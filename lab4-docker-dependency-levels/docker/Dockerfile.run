@@ -1,0 +1,5 @@
+FROM scratch
+
+COPY --from=go-app-build /http/http_server /
+
+ENTRYPOINT ["./http_server"]
