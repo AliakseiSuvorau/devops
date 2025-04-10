@@ -1,5 +1,12 @@
 FROM scratch
 
-COPY --from=go-app-build /http/http_server /
+COPY --from=go-app-build /http/http_server /app
+
+WORKDIR /app
+
+RUN addgroup -S app_user_group && \
+        adduser -S app_user -G app_user_group && \
+        chown -R app_user:app_user_group .
+USER app_user
 
 ENTRYPOINT ["./http_server"]
