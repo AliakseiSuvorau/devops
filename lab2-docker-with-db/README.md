@@ -3,8 +3,18 @@
 ---
 Run this line from the project root to run the app:
 
+Windows:
+
 ```bash
+docker-compose -f .\docker\docker-compose.yml build
 docker-compose -f .\docker\docker-compose.yml up
+```
+
+Linux:
+
+```bash
+docker-compose -f ./docker/docker-compose.yml build
+docker-compose -f ./docker/docker-compose.yml up
 ```
 
 As a result, both containers will be started successfully (all the data is already hardcoded, which is a bad example, but for a lab it will have to do)

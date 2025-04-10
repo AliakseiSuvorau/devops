@@ -6,8 +6,17 @@ COPY ../ /app/
 # Setting workdir for convenience
 WORKDIR /app/
 
-# Building a gradle app
-RUN gradle clean build
+# # Creating user and building a gradle app
+RUN gradle clean build && \
+        rm -rf gradle gradle.properties
+
+# RUN gradle clean build
+# build.gradle.kts
+
+RUN addgroup -S app_user_group && \
+        adduser -S app_user -G app_user_group && \
+        chown -R app_user:app_user_group .
+USER app_user
 
 # Running the app
 ENTRYPOINT ["gradle", ":run"]

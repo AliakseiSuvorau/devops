@@ -1,7 +1,9 @@
+.gitignore
 .grandle
 .idea
 .kotlin
-dradlew
+gradlew
 gradlew.bat
 README.md
 src/Dockerfile
+docker
