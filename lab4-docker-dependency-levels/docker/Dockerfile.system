@@ -1,0 +1,12 @@
+FROM alpine:latest
+
+# Downloading and installing go
+RUN wget https://golang.org/dl/go1.23.2.linux-amd64.tar.gz && \
+    tar -C /usr/local -xzf go1.23.2.linux-amd64.tar.gz && \
+    rm /go1.23.2.linux-amd64.tar.gz
+
+# Setting environment variables
+ENV GOLANG_VERSION=1.23.2 \
+    GOROOT=/usr/local/go \
+    GOPATH=/go \
+    PATH=/usr/local/go/bin:$PATH

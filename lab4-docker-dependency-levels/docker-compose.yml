@@ -1,0 +1,7 @@
+services:
+  build:
+    image: go-app
+    container_name: go-http-server
+    ports:
+      - "6029:6029"
+    restart: unless-stopped
